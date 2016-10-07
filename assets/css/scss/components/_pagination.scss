@@ -1,0 +1,80 @@
+/* Single Post Pagination
+--------------------------------------------- */
+.post-navigation {
+  @extend %clearfix;
+}
+.page-links {
+  display: block;
+  margin: $base-margin 0;
+
+  span,
+  a {
+    transition: all 0.2s ease-in-out;
+    border: 1px solid $page-links-border-color;
+    border-radius: $base-border-radius;
+    color: $page-links-link-color;
+    display: inline-block;
+    padding: 5px 15px;
+  }
+
+  span {
+    background: $page-links-current-background-color;
+  }
+
+  a {
+    background: $page-links-background-color;
+
+    &:hover,
+    &:focus {
+      background: $page-links-background-color-hover;
+      color: $page-links-link-color;
+    }
+  }
+}
+
+
+/* Page Links
+--------------------------------------------- */
+.nav-next a {
+
+  @include media($medium-screen-up) {
+    float: right;
+  }
+
+  &:after {
+    content: '>';
+    padding-left: 10px;
+  }
+}
+
+.nav-previous a {
+
+  @include media($medium-screen-up) {
+    float: left;
+  }
+
+  &:before {
+    content: '<';
+    padding-right: 10px;
+  }
+}
+
+.nav-next a,
+.nav-previous a {
+  background: $nav-single-background-color;
+  border-radius: $base-border-radius;
+  border: 1px solid $nav-single-border-color;
+  color: $nav-single-link-color;
+  display: block;
+  margin: 0 0 10px;
+  padding: 16px 20px 14px;
+  text-align: center;
+}
+
+.nav-next a:hover,
+.nav-previous a:hover,
+.nav-next a:focus,
+.nav-previous a:focus {
+  background: $nav-single-background-color-hover;
+  color: $nav-single-link-color;
+}

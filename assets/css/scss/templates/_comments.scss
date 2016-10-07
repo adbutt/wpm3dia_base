@@ -1,0 +1,194 @@
+.comments-number {
+  margin-bottom: 15px;
+}
+
+.comment-body {
+  background-color: $comment-background-color;
+  margin-bottom: $base-margin;
+
+  @include media($small-screen-up) {
+    border: 1px solid $comment-border-color;
+  }
+
+  table {
+    background-color: $comment-table-background-color;
+  }
+}
+
+.comment {
+  position: relative;
+  padding-left: 40px;
+
+  @include media($small-screen-up) {
+    padding-left: 60px;
+  }
+
+  footer {
+    background-color: $comment-header-background-color;
+    clear: both;
+    font-size: $medium-font-size;
+    padding: 5px;
+    position: relative;
+
+    @include media($small-screen-up) {
+      border-bottom: 1px solid $comment-border-color;
+      padding: 10px 20px;
+    }
+
+    &::before,
+    &::after {
+      border-color: transparent;
+      border-style: solid solid outset;
+      content: " ";
+      display: block;
+      height: 0;
+      left: -16px;
+      margin-top: -8px;
+      pointer-events: none;
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      width: 0;
+    }
+
+    &::before {
+      border-right-color: transparent;
+      border-width: 8px;
+
+      @include media($small-screen-up) {
+        border-right-color: $comment-border-color;
+      }
+    }
+
+    &::after {
+      border-right-color: $comment-header-background-color;
+      border-width: 7px;
+      margin-top: -7px;
+      margin-left: 2px;
+      top: 50%;
+    }
+
+    cite {
+      margin-right: 5px;
+    }
+
+    .comment-edit-link {
+      margin-left: 5px;
+    }
+  }
+
+  .avatar {
+    position: absolute;
+    left: -40px;
+    margin: 0;
+    width: 30px;
+
+    @include media($small-screen-up) {
+      width: 48px;
+      left:-64px;
+    }
+  }
+
+  .comment {
+    border: 0;
+    margin-left: -40px;
+    margin-top: 20px;
+    padding-bottom: 0;
+
+    @include media($small-screen-up) {
+      margin-left: -30px;
+    }
+  }
+
+  .comment:last-child {
+    margin-bottom: 0;
+  }
+
+  .reply {
+    @include media($small-screen-up) {
+      padding: 0 20px 20px;
+    }
+  }
+
+}
+
+.bypostauthor > .comment-body {
+  footer {
+    background-color: $comment-author-header-background-color;
+
+    &::after {
+      border-right-color: $comment-author-header-background-color;
+    }
+  }
+}
+
+.reply {
+
+  a {
+    color: $comment-meta-link-color;
+
+    &:hover,
+    &:focus {
+      color: $comment-meta-link-color-hover;
+    }
+  }
+}
+
+/* Comment Content
+--------------------------------------------- */
+.comment-content {
+  @include entry-content();
+  clear: both;
+  padding-top: 10px;
+
+  @include media($small-screen-up) {
+    padding: $comment-padding;
+  }
+}
+
+/* Pingbacks & Trackbacks
+--------------------------------------------- */
+.pingback,
+.trackback {
+  background-color: $comment-background-color;
+  border: 1px solid $comment-border-color;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+/* Comment Respond Form
+--------------------------------------------- */
+.comment-respond {
+  background-color: $comments-background-color;
+  border: 1px solid $comment-border-color;
+  margin-bottom: $base-margin;
+  padding: $comments-padding-small;
+
+  @include media($small-screen-up) {
+    padding: $comments-padding;
+  }
+
+  label {
+    display: block;
+  }
+
+  .submit {
+    display: block;
+    width: 100%;
+
+    @include media($small-screen-up) {
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+.form-allowed-tags {
+  background-color: $allowed-tags-background-color;
+  font-size: $medium-font-size;
+  padding: 10px;
+
+  @include media($small-screen-up) {
+    padding: 20px;
+  }
+}

@@ -1,0 +1,18 @@
+.site-content {
+	@include outer-container;
+	background-color: $base-background-color;
+}
+.test {
+	text-align:left;
+}
+.animate-section {
+  @extend %bganimate;
+  padding:20px;
+  h2 {
+    color:$white;
+    text-align: center;
+  }
+  margin-left:-40px;
+  margin-right: -40px;
+}
+

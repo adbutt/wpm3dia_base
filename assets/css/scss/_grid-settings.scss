@@ -1,0 +1,27 @@
+@import "../../../node_modules/bourbon-neat/app/assets/stylesheets/_neat-helpers";
+
+// Adding a Visual Grid while you develop. Set to 'true.'
+$visual-grid: false;
+$visual-grid-color: #bada55;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.2;
+$em-base:18px;
+
+// Change the grid settings
+$column: 70px;
+$gutter: 30px;
+$max-width:1170px;
+
+// Flex grid settings to match grid settings
+$fg-column: $column;
+$fg-gutter: $gutter;
+$fg-max-columns: $grid-columns;
+
+// Breakpoints
+$mobile: new-breakpoint(min-width 200px 4);
+$mobile-landscape: new-breakpoint(min-width 480px 6);
+$tablet: new-breakpoint(min-width 768px 8);
+$tablet-landscape: new-breakpoint(min-width 1024px 12);
+$laptop: new-breakpoint(min-width 1280px 12);
+$desktop: new-breakpoint(min-width 1440px 12);
+

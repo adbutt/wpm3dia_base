@@ -1,0 +1,142 @@
+%button-base {
+  border: 0;
+  border-radius: $base-border-radius;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $base-button-font-size;
+  font-weight: 400;
+  padding: 16px 24px;
+  text-align: center;
+  text-transform: uppercase;
+  width: auto;
+}
+
+%cta-button-style {
+  background-color: $cta-button-background-color;
+  color: $cta-button-font-color;
+
+  &:hover,
+  &:focus {
+    background-color: $cta-button-background-color-hover;
+    color: $cta-button-font-color-hover;
+  }
+}
+
+
+//css animated background
+//usage example 
+//.entry-content {
+//  @extend %bganimate;
+//}
+
+%bganimate {
+  background: linear-gradient(270deg, #33f4c2, #31053c, #9dcf17);
+  background-size: 600% 600%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  -o-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-o-keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+}
+//@extend %clearfix - IE compatible clearfix;
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+%hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+//@extend %visuallyhidden - use for image replacements
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+//animations
+.fade-in,
+.step-in {
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.fade-in.animate,
+.step-in.animate {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.fade-in.slow,
+.step-in.slow {
+  -webkit-transition: all 0.6s ease-in-out;
+  transition: all 0.6s ease-in-out;
+}
+
+.wp-step-in-slow .step-in {
+  -webkit-transition: all 0.8s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+
+.wp-step-in-fast .step-in {
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+//Smooth Page Transitions using SmoothState.js
+
+// .site-content {
+//     -webkit-transition: -webkit-transform .5s, opacity .5s;
+//     -ms-transition: -o-transform .5s, opacity .5s;
+//     -o-transition: -o-transform .5s, opacity .5s;
+//     transition: transform .5s, opacity .5s;
+// }
+// .slide-out .site-content {
+//     -webkit-transform: translate3d( 0, 100px, 0 );
+//     -ms-transform: translate3d( 0, 100px, 0 );
+//     -o-transform: translate3d( 0, 100px, 0 );
+//     transform: translate3d( 0, 100px, 0 );
+//     opacity: 0;
+// }

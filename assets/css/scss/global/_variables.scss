@@ -1,0 +1,383 @@
+// COLOURS
+// Theme Colors (private vars)
+//------------------------------------------------------------------------------
+$off-black:   #222222;
+$dark-gray:   #444444;
+$medium-gray: #5d646b;
+$light-gray:  #a4a5a5;
+$fog:         #ccc;
+$medium-fog:  #e0e0e0;
+$light-fog:   #f3f3f4;
+$white:       #fff;
+$light-blue:  #69c0fc;
+$medium-blue: #1079c2;
+$dark-blue:   #00376c;
+$badass:	#bada55;
+//Buurman
+//#00447c
+//#c1cd23
+
+// Better default colors
+//------------------------------------------------------------------------------
+// Cool
+$aqua:  #7fdbff;
+$blue:  #0074d9;
+$navy:  #001f3f;
+$teal:  #39cccc;
+$green: #2ecc40;
+$olive: #3d9970;
+$lime:  #01ff70;
+// Warm
+$yellow:  #ffdc00;
+$orange:  #ff851b;
+$red:     #ff4136;
+$fuchsia: #f012be;
+$purple:  #b10dc9;
+$maroon:  #85144b;
+
+
+// Global Base Colors
+//------------------------------------------------------------------------------
+$base-background-color:           $white;
+$base-font-color:                 $dark-gray;
+$base-border-color:               $medium-fog;
+$base-accent-color:               $light-gray;
+$base-heading-color:              $off-black;
+$base-heading-color-hover:        $medium-blue;
+$base-blockquote-color:           $medium-gray;
+$base-link-color:                 $medium-blue;
+$base-link-color-hover:           lighten($base-link-color, 10);
+$base-selection-background-color: $off-black;
+$base-selection-color:            $white;
+$base-insert-color:               lighten($light-blue, 45);
+$cta-background-color:            $orange;
+
+// Button Colors
+//------------------------------------------------------------------------------
+$base-button-background-color:       $off-black;
+$base-button-background-color-hover: lighten($base-button-background-color, 10);
+$base-button-font-color:             $white;
+$base-button-font-color-hover:       $white;
+$cta-button-background-color:        $light-blue;
+$cta-button-background-color-hover:  lighten($cta-button-background-color, 10);
+$cta-button-font-color:              $white;
+$cta-button-font-color-hover:        $white;
+
+// Form Colors
+//------------------------------------------------------------------------------
+$input-background-color:  $white;
+$form-font-color:         $base-font-color;
+$form-border-color:       $base-border-color;
+$form-border-color-hover: darken($base-border-color, 5);
+$form-border-color-focus: darken($base-border-color, 20);
+$form-placeholder-color:  darken($base-border-color, 10);
+
+//Validation
+$danger-color: $red; // Bad color for errors, validation etc.
+$success-color: $green; // Good color for success etc.
+$info-color: $blue; // Good color for feedback etc.
+$warning-color: $orange; // Good color for warning etc.
+
+// Header Colors
+//------------------------------------------------------------------------------
+$header-background-color: $light-fog;
+$header-border-color:     $base-border-color;
+$header-font-color:       $dark-gray;
+$header-link-color:       $off-black;
+
+// Navigation Colors
+//------------------------------------------------------------------------------
+$nav-background-color:            $white;
+$nav-border-color:                $base-border-color;
+$nav-link-color:                  $dark-gray;
+$nav-link-color-hover:            $base-link-color;
+
+$menu-header-border-color:        $base-border-color;
+$menu-header-color:               $light-gray;
+$menu-header-color-hover:         $base-link-color;
+
+$menu-primary-background-color:   $nav-background-color;
+$menu-primary-border-color:       $base-border-color;
+$menu-primary-link-color:         lighten($nav-link-color, 10);
+$menu-primary-link-color-hover:   $base-link-color;
+
+$menu-secondary-background-color: $nav-background-color;
+$menu-secondary-border-color:     $base-border-color;
+$menu-secondary-link-color:       lighten($nav-link-color, 10);
+$menu-secondary-link-color-hover: $base-link-color;
+
+// Mobile Menu Colors
+//------------------------------------------------------------------------------
+$menu-button-background-color:       transparent;
+$menu-button-background-color-hover: transparent;
+$menu-button-link-color:             $white;
+$menu-button-color-hover:            $light-gray;
+$menu-mobile-background-color:       lighten($off-black, 3);
+$menu-mobile-border-color:           rgba(255, 255, 255, 0.1);
+$menu-mobile-color:                  lighten($nav-link-color, 30);
+$menu-mobile-color-hover:            $base-link-color;
+$menu-mobile-subnav-color:           lighten($nav-link-color, 15);
+
+// Entry Colors
+//------------------------------------------------------------------------------
+$entry-background-color:           $white;
+$entry-border-color:               $base-border-color;
+$entry-sticky-border-color:        $dark-gray;
+$blockquote-border-color:          $light-fog;
+$table-border-color:               $base-border-color;
+$code-background-color:            $light-fog;
+$code-border-color:                darken($base-border-color, 10);
+$code-font-color:                  $off-black;
+$entry-meta-font-color:            $medium-gray;
+$entry-meta-link-color:            $medium-gray;
+$entry-meta-link-color-hover:      $base-link-color;
+$entry-meta-link-border-color:     $base-link-color;
+$featured-media-background-color:  $light-fog;
+$pre-background-color:             $light-fog;
+$corner-ribbon-background-color:   $base-accent-color;
+$corner-ribbon-font-color:         $white;
+$gallery-caption-background-color: $off-black;
+$gallery-caption-font-color:       $white;
+
+
+// Icon Colors
+//------------------------------------------------------------------------------
+$media-info-toggle-color:          $light-fog;
+$media-player-button-color:        $white;
+$media-player-unmute-button-color: $dark-gray;
+
+// Comment Section Colors
+//------------------------------------------------------------------------------
+$comments-background-color:                 $white;
+$comments-font-color:                       $base-font-color;
+$comment-background-color:                  $white;
+$comment-border-color:                      $base-border-color;
+$comment-header-background-color:           $light-fog;
+$comment-author-header-background-color:    lighten($light-blue, 25);
+$comment-meta-link-color:                   $entry-meta-link-color;
+$comment-meta-link-color-hover:             $entry-meta-link-color-hover;
+$comment-meta-link-border-color:            $entry-meta-link-border-color;
+$comment-table-background-color:            $white;
+$comment-reply-link-background-color:       $light-fog;
+$comment-reply-link-background-color-hover: $white;
+$comment-reply-link-color:                  $base-font-color;
+$comment-reply-link-color-hover:            $base-link-color;
+$allowed-tags-background-color:             $light-fog;
+
+// Pagination Colors
+//------------------------------------------------------------------------------
+$pagination-background-color:         $white;
+$pagination-background-color-hover:   $light-fog;
+$pagination-current-background-color: darken($light-fog, 4);
+$pagination-link-color:               $base-font-color;
+$pagination-border-color:             $base-border-color;
+$pagination-border-color-hover:       darken($pagination-border-color, 2);
+
+$nav-single-background-color:         $pagination-background-color;
+$nav-single-background-color-hover:   $pagination-background-color-hover;
+$nav-single-link-color:               $pagination-link-color;
+$nav-single-border-color:             $pagination-border-color;
+$nav-single-border-color-hover:       $pagination-border-color-hover;
+
+$page-links-background-color:         $pagination-background-color;
+$page-links-background-color-hover:   $pagination-background-color-hover;
+$page-links-current-background-color: $pagination-current-background-color;
+$page-links-link-color:               $pagination-link-color;
+$page-links-border-color:             $pagination-border-color;
+$page-links-border-color-hover:       $pagination-border-color-hover;
+
+// Base Widget Colors
+//------------------------------------------------------------------------------
+$widget-background-color: $white;
+$widget-link-color:       $medium-gray;
+$widget-link-color-hover: $base-link-color;
+
+// Footer Widgets Colors
+//------------------------------------------------------------------------------
+$footer-widgets-background-color:              $light-fog;
+$footer-widgets-font-color:                    $base-font-color;
+$footer-widgets-heading-color:                 $base-heading-color;
+$footer-widgets-link-color:                    $medium-gray;
+$footer-widgets-link-color-hover:              $base-link-color-hover;
+$footer-widgets-border-color:                  $base-border-color;
+$footer-widgets-button-background-color:       $base-button-background-color;
+$footer-widgets-button-font-color:             $base-button-font-color;
+$footer-widgets-button-background-color-hover: $base-button-background-color-hover;
+$footer-widgets-button-font-color-hover:       $base-button-font-color-hover;
+
+// Footer Colors
+//------------------------------------------------------------------------------
+$footer-background-color: $white;
+$footer-font-color:       $base-font-color;
+$footer-border-color:     $base-border-color;
+$footer-link-color:       $medium-gray;
+$footer-link-color-hover: $base-link-color;
+
+// Official Social Colors
+//------------------------------------------------------------------------------
+$facebook:#3b5998;
+$linkedin:#007bb6;
+$youtube:#bb0000;
+$twitter:#00aced;
+$google:#dd4b39;
+
+//LAYOUT
+// Global Screen Sizes
+//------------------------------------------------------------------------------
+$smallest-screen:  $max-width - 820px; // 320px;
+$smaller-screen:   $max-width - 660px; // 480px;
+$small-screen:     $max-width - 330px; // 810px;
+$medium-screen:    $max-width - 117px; // 1023px
+$large-screen:     $max-width + 40px;  // 1180px
+
+// Global Breakpoints
+//------------------------------------------------------------------------------
+$smallest-screen-up:  new-breakpoint(min-width $smallest-screen  4);
+$smaller-screen-up:   new-breakpoint(min-width $smaller-screen   6);
+$small-screen-up:     new-breakpoint(min-width $small-screen    12);
+$medium-screen-up:    new-breakpoint(min-width $medium-screen   12);
+$large-screen-up:     new-breakpoint(min-width $large-screen    12);
+
+// Global Max Width Settings
+//------------------------------------------------------------------------------
+$base-wrap-max-width:    $max-width - 372px; // 768px;
+$wrap-max-width-medium:  $max-width - 180px; // 960px
+$wrap-max-width-large:   $max-width;
+
+// Global Spacing
+//------------------------------------------------------------------------------
+$base-vertical-spacing: 0.5em;
+$base-margin:           30px;
+$base-padding:          40px;
+$base-padding-small:    20px;
+
+// Layout Spacing
+//------------------------------------------------------------------------------
+$site-inner-padding: 30px;
+
+// Content Spacing
+//------------------------------------------------------------------------------
+$content-margin:         26px;
+$content-margin-small:   16px;
+$article-padding:        $base-padding $base-padding ($base-padding - $content-margin);
+$article-padding-small:  $base-padding-small $base-padding-small ($base-padding-small - $content-margin-small);
+
+$author-box-padding:       $article-padding;
+$author-box-padding-small: $article-padding-small;
+
+// Comment Spacing
+//------------------------------------------------------------------------------
+$comments-padding:        $article-padding;
+$comments-padding-small:  $article-padding-small;
+$comment-padding:         20px 20px 0;
+$comment-padding-small:   10px 10 0;
+$comment-margin:          20px;
+$comment-margin-small:    10px;
+
+// Widget Spacing
+//------------------------------------------------------------------------------
+$widget-padding: 30px;
+
+// Navigation Spacing
+//------------------------------------------------------------------------------
+$menu-primary-padding: 20px;
+$menu-mobile-item-padding: 20px;
+
+//MISC
+
+// Global Border Radius
+//------------------------------------------------------------------------------
+$base-border-radius: 3px;
+$form-border-radius: $base-border-radius;
+
+// Global Shadows
+//------------------------------------------------------------------------------
+$form-box-shadow:       inset 0 1px 3px rgba(0, 0, 0, 0.06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px rgba(darken($form-border-color-focus, 5), 0.7);
+
+$responsive-menu-transition: 0.4s ease-in-out;
+
+
+//TYPOGRAPHY
+
+// Global Font Families
+//------------------------------------------------------------------------------
+$sans-serif:      Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$sans-serif-alt:  Raleway, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$serif:           Georgia, Times, 'Times New Roman', serif;
+$monospace:       Consolas, Monaco, 'Andale Mono', 'DejaVu Sans Mono', monospace;
+
+// Base Font Families
+//------------------------------------------------------------------------------
+$base-font-family:        $sans-serif;
+$heading-font-family:     $sans-serif-alt;
+$blockquote-font-family:  $serif;
+
+// Base Font Sizes
+//------------------------------------------------------------------------------
+$base-font-size:        18px;
+$base-font-size-medium: floor(modular-scale(-1, $base-font-size, $major-second));
+$base-font-size-small:  floor(modular-scale(-2, $base-font-size, $major-second));
+$base-line-height:      1.625;
+$heading-line-height:   1.25;
+$medium-font-size:      rem(floor(modular-scale(-1, $base-font-size, $major-second)));
+$small-font-size:       rem(floor(modular-scale(-3, $base-font-size, $major-second)));
+$base-button-font-size: $medium-font-size;
+
+// Heading Font Properties
+//------------------------------------------------------------------------------
+$h1-font-size: rem(floor(modular-scale(6, $base-font-size, $major-second)));
+$h2-font-size: rem(floor(modular-scale(5, $base-font-size, $major-second)));
+$h3-font-size: rem(floor(modular-scale(4, $base-font-size, $major-second)));
+$h4-font-size: rem(floor(modular-scale(3, $base-font-size, $major-second)));
+$h5-font-size: rem(floor(modular-scale(2, $base-font-size, $major-second)));
+$h6-font-size: rem(floor(modular-scale(1, $base-font-size, $major-second)));
+
+$h1-font-size-small: rem(floor(modular-scale(5, $base-font-size, $major-second)));
+$h2-font-size-small: rem(floor(modular-scale(4, $base-font-size, $major-second)));
+$h3-font-size-small: rem(floor(modular-scale(3, $base-font-size, $major-second)));
+$h4-font-size-small: rem(floor(modular-scale(2, $base-font-size, $major-second)));
+$h5-font-size-small: rem(floor(modular-scale(1, $base-font-size, $major-second)));
+
+// Header Font Properties
+//------------------------------------------------------------------------------
+$header-font-family:         $heading-font-family;
+$site-title-font-size:       $h2-font-size;
+$site-description-font-size: rem(floor(modular-scale(-1, $base-font-size, $major-second)));
+
+// Loop Font Properties
+//------------------------------------------------------------------------------
+$loop-title-size: $h1-font-size;
+
+// Menu Font Properties
+//------------------------------------------------------------------------------
+$nav-font-size:         $medium-font-size;
+$subnav-font-size:      $small-font-size;
+$pagination-font-size:  $medium-font-size;
+$menu-button-font-size: floor(modular-scale(7, $base-font-size, $major-second));
+
+// Form Font Properties
+//------------------------------------------------------------------------------
+$form-font-size:   $base-font-size;
+$form-font-family: $base-font-family;
+
+// Entry Font Properties
+//------------------------------------------------------------------------------
+$gallery-caption-font-size: $small-font-size;
+$wp-caption-font-size:      $small-font-size;
+
+// Widget Font Properties
+//------------------------------------------------------------------------------
+$widget-title-size: $h6-font-size;
+$widget-font-size: $medium-font-size;
+$footer-widgets-font-size: $widget-font-size;
+
+// Footer Font Properties
+//------------------------------------------------------------------------------
+$footer-font-size: $medium-font-size;
+
+/*  -------------------------------------
+  :: Client Global Easing (Animation)
+  ---------------------------------- */
+  $cubic-bezier: cubic-bezier(.2,.3,.25,.9);
+

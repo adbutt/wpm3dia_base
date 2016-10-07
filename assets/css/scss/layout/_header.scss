@@ -1,0 +1,292 @@
+#loader-bar {
+    background: $fuchsia;
+    position: fixed;
+    top: 0;
+    height: 2px;
+    left: 0;
+    width: 0vw;
+    z-index: 20;
+    transition: all 0.25s $cubic-bezier 0ms;
+  }
+.site-header {
+  @extend %clearfix;
+  background-color: $header-background-color;
+  border-bottom: 1px solid $header-border-color;
+  color: $header-font-color;
+  padding: 10px 0;
+
+
+  @include media($small-screen-up) {
+    padding: 15px 0;
+  }
+
+  @include media($medium-screen-up) {
+    padding: 25px 0;
+  }
+}
+/* Title Area
+--------------------------------------------- */
+
+.site-branding {
+  display: inline-block;
+  float: none;
+  width: 100%;
+  text-align:center;
+
+  @include media($medium-screen-up) {
+    @include span-columns(3);
+    margin-right: 0;
+    text-align:left;
+    width:auto;
+  }
+}
+
+.site-title {
+  font-family: $header-font-family;
+  font-size: $site-title-font-size;
+  font-weight: 600;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  
+  a,
+  a:hover,
+  a:focus {
+    color:$header-link-color;
+  }
+}
+
+.site-description {
+  // @extend %visuallyhidden;
+  color: $header-font-color;
+  font-family: $header-font-family;
+  font-size: $site-description-font-size;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.site-description,
+.site-title {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.site-header .main-navigation {
+  display:none;
+	@include media($medium-screen-up) {
+    @include span-columns(9);
+    @include omega();
+    float: right;
+    text-align: right;
+    background-color: $menu-primary-background-color;
+    border:1px solid $menu-primary-border-color;
+  }
+
+  ul {
+  	// display: none;
+  	list-style: none;
+  	margin: 0;
+  	padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
+    padding: $menu-primary-padding;
+  	position: relative;
+    font-size: $nav-font-size;
+    text-align: left;
+  }
+
+  li > a {
+  	display: block;
+  	text-decoration: none;
+    color:$nav-link-color;
+    text-transform: uppercase;
+    position:relative;
+      
+  }
+  /* Animated underline on top level LI's */
+  ul:not(.sub-menu) > li > a:after {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    bottom: -6px;
+    left: 50%;
+    content: '';
+    border-bottom: 2px solid $nav-link-color-hover;
+    transition-property: all;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+  }
+  ul:not(.sub-menu) > li:hover > a:after {
+      right:0;
+      left:0;
+    }
+
+  ul ul {
+    margin-top: $menu-primary-padding*2;
+    background-color:$menu-secondary-background-color;
+  	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    border:1px solid $menu-secondary-border-color;
+  	float: left;
+  	position: absolute;
+  	top: 1.5em;
+  	left: -999em;
+  	z-index: 99999;
+  }
+
+  ul ul ul {
+  	left: -999em;
+  	top: 0;
+  }
+
+  ul ul a {
+  	width: 200px;
+    color:$menu-secondary-link-color;
+  }
+
+  ul ul li {
+    font-size: $subnav-font-size;
+  }
+
+  li:hover > a,
+  li.focus > a {
+    color:$nav-link-color-hover;
+  }
+
+  ul ul :hover > a,
+  ul ul .focus > a {
+    color:$menu-secondary-link-color-hover;
+  }
+
+  ul ul a:hover,
+  ul ul a.focus {
+  }
+
+  ul li:hover > ul,
+  ul li.focus > ul {
+  	left: auto;
+  }
+
+  ul ul li:hover > ul,
+  ul ul li.focus > ul {
+  	left: 100%;
+  }
+
+  .current_page_item > a,
+  .current-menu-item > a,
+  .current_page_ancestor > a,
+  .current-menu-ancestor > a {
+    color:$nav-link-color-hover;
+  }
+}
+
+@include media($medium-screen-up) {
+  .js #primary-menu {
+    display:block;
+  }
+  .slicknav_menu {
+    display:none;
+  }
+}
+
+.slicknav_menu {
+  font-size: 16px;
+  box-sizing: border-box;
+  background: $menu-mobile-background-color;
+  padding: 5px;
+  * {
+    box-sizing: border-box;
+  }
+  .slicknav_menutxt {
+    color: $menu-mobile-color;
+    font-weight: bold;
+    text-shadow: 0 1px 3px $off-black;
+  }
+  .slicknav_icon-bar {
+    background-color: $menu-button-link-color;
+  }
+}
+.slicknav_btn {
+  margin: 5px 5px 6px;
+  text-decoration: none;
+  // text-shadow: 0 1px 1px $color_0;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: $menu-button-background-color;  
+}
+.slicknav_nav {
+  color: $menu-mobile-color;
+  margin: 0;
+  padding: 0;
+  font-size: 0.875em;
+  list-style: none;
+  overflow: hidden;
+  ul {
+    list-style: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 0 20px;
+  }
+  .slicknav_row {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    &:hover {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      // background: $color_hover_bg;
+      color: $menu-mobile-color-hover;
+    }
+  }
+  a {
+    padding: 5px 10px;
+    margin: 2px 5px;
+    text-decoration: none;
+    color: $menu-mobile-color;
+    &:hover {
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      // background: $color_hover_bg;
+      color: $menu-mobile-color-hover;
+    }
+  }
+  .slicknav_txtnode {
+    margin-left: 15px;
+  }
+  .slicknav_item a {
+    padding: 0;
+    margin: 0;
+  }
+  .slicknav_parent-link a {
+    padding: 0;
+    margin: 0;
+  }
+}
+// .slicknav_brand {
+//   color: $color_text;
+//   font-size: 18px;
+//   line-height: 30px;
+//   padding: 7px 12px;
+//   height: 44px;
+// }
+
+.header-mob {
+  @extend %clearfix;
+  width:100%;
+  zoom:1;
+  position:relative;
+  z-index:10;
+  @include media($medium-screen-up) {
+    display: none;
+  }
+}
+.header-mob .btn {
+  width:50%;
+  float: left;
+  opacity: 1;
+  transition: background-color 0.2s ease-in-out;
+}

@@ -1,0 +1,247 @@
+// ------------------------------------------------------------
+// Enhanced Omega Reset - https://github.com/vitch/bourbon-neat-example/commit/cb9bf7edd27d05bb81115e79518f43b815f3df0c
+// ------------------------------------------------------------
+
+@mixin omega-reset($nth, $cols:$grid-columns, $gutter:$gutter) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter($cols, $gutter); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+
+// ------------------------------------------------------------
+// How to use your Neat grid using Omega Reset
+// ------------------------------------------------------------
+
+// .some-selector {
+// 	@include media($sm) {
+// 		@include span-columns(2);
+// 		@include omega(2n);
+// 	}
+// 	@include media($md) {
+// 		@include omega-reset(2n); // Reset the previous omega declaration set by the preceding rule
+// 		@include span-columns(3); // Set your columns etc.
+// 		@include omega(2n); // Set omega for your tastes here, this now correctly overrides the previous omega rule.
+// 	}
+// 	@include media($mdbg) { // Wash. Rinse. Repeat
+// 		@include omega-reset(2n);
+// 		@include span-columns(2);
+// 		@include omega(4n);
+// 	}
+// 	@include media($hg) {
+// 		@include omega-reset(4n);
+// 		@include span-columns(2);
+// 		@include omega(2n);
+// 	}
+// }
+
+@mixin entry-content() {
+  p,
+  > ol,
+  > ul,
+  > dl {
+    margin-bottom: $content-margin-small;
+
+    @include media($small-screen-up) {
+      margin-bottom: $content-margin;
+    }
+  }
+
+  ol,
+  ul {
+    margin-left: 20px;
+
+    @include media($small-screen-up) {
+      margin-left: $base-padding;
+    }
+  }
+
+  li {
+    margin-bottom: 1%;
+  }
+
+  ol > li {
+    list-style-type: decimal;
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  li ol,
+  li ul {
+    margin-top: 1%;
+  }
+
+  blockquote {
+    border-left: 7px solid $blockquote-border-color;
+    margin: 4% 5% 4% 0;
+    padding: 0 0 0 5%;
+  }
+
+  table {
+    border-collapse: separate;
+    border: 1px solid $table-border-color;
+    border-left: 0;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    border-left: 1px solid $table-border-color;
+    border-top: 1px solid $table-border-color;
+    line-height: 1.2;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  table thead:first-child tr:first-child th,
+  table tbody:first-child tr:first-child th,
+  table tbody:first-child tr:first-child td {
+    border-top: 0 none;
+  }
+
+  code {
+    background: $code-background-color;
+    border: 1px solid $code-border-color;
+    color: $code-font-color;
+    padding: 2px 4px;
+  }
+
+  .wp-caption .wp-caption-text {
+    margin: 10px 0;
+    font-size: $wp-caption-font-size;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+  }
+
+  .search-form {
+    margin-bottom: $content-margin;
+  }
+}
+//-------------------------------------------------------------------------------------
+// Angled Edges v1.1.2 (https://github.com/josephfusco/angled-edges)
+// Copyright 2016 Joseph Fusco
+// Licensed under MIT (https://github.com/josephfusco/angled-edges/blob/master/LICENSE)
+//-------------------------------------------------------------------------------------
+
+//USAGE @include angled-edge($location, $hypotenuse, $fill, $width: 2800, $height: 100);
+
+/// Replace `$search` with `$replace` in `$string`
+///
+/// @author Hugo Giraudel
+/// @link   http://www.sassmeister.com/gist/1b4f2da5527830088e4d
+///
+/// @param  {String}  $string - Initial string
+/// @param  {String}  $search - Substring to replace
+/// @param  {String}  $replace ('') - New value
+/// @return {String}  Updated string
+///
+@function ae-str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + ae-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+/// Encode SVG to use as background
+///
+/// @param  {String}  $string
+/// @return {String}  Encoded svg data
+///
+@function ae-svg-encode($string){
+  $result: ae-str-replace($string, '<svg', "<svg xmlns='http://www.w3.org/2000/svg'");
+  $result: ae-str-replace($result, '%', '%25');
+  $result: ae-str-replace($result, '"', '%22');
+  $result: ae-str-replace($result, "'", '%27');
+  $result: ae-str-replace($result, ' ', '%20');
+  $result: ae-str-replace($result, '<', '%3C');
+  $result: ae-str-replace($result, '>', '%3E');
+  @return 'data:image/svg+xml,' + $result;
+}
+
+/// Outputs pseudo content for main mixin
+///
+/// @author Joseph Fusco
+///
+/// @param  {String}  $location
+/// @param  {Number}  $height
+/// @output psuedo content
+///
+@mixin ae-pseudo($wedge, $height) {
+  background-image: url($wedge);
+  background-position: center center;
+  background-repeat: no-repeat;
+  content: '';
+  height: $height * 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+/// Attatches an svg wedge shape to an element
+///
+/// @author Joseph Fusco
+///
+/// @param  {String}  $location   - 'inside top', 'outside top', 'inside bottom', 'outside bottom'
+/// @param  {String}  $hypotenuse - 'upper left', 'upper right', 'lower left', 'lower right'
+/// @param  {Color}   $fill
+/// @param  {Number}  $width
+/// @param  {Number}  $height
+/// @output '::before' and/or '::after' with svg background image
+///
+@mixin angled-edge($location, $hypotenuse, $fill, $width: 2800, $height: 100) {
+
+  position: relative;
+
+  // polygon points for right triangle
+  $points: (
+    'upper left': '0,#{$height} #{$width},#{$height} #{$width},0',
+    'upper right': '0,#{$height} #{$width},#{$height} 0,0',
+    'lower left': '0,0 #{$width},#{$height} #{$width},0',
+    'lower right': '0,0 #{$width},0 0,#{$height}'
+  );
+
+  // ensure $fill color is using rgb()
+  $fill-rgb: 'rgb(' + round(red($fill)) + ',' + round(green($fill)) + ',' + round(blue($fill)) + ')';
+
+  // capture alpha component of $fill to use with fill-opacity
+  $fill-alpha: alpha($fill);
+
+  $wedge: ae-svg-encode('<svg height="#{$height}" width="#{$width}" fill="#{$fill-rgb}" fill-opacity="#{$fill-alpha}"><polygon points="#{map-get($points, $hypotenuse)}"></polygon></svg>');
+
+  @if ($location == 'inside top') {
+    &::before {
+      @include ae-pseudo($wedge, $height);
+      top: 0;
+    }
+  } @else if ($location == 'outside top') {
+    &::before {
+      @include ae-pseudo($wedge, $height);
+      top: -$height * 1px;
+    }
+  } @else if ($location == 'inside bottom') {
+    &::after {
+      @include ae-pseudo($wedge, $height);
+      bottom: 0;
+    }
+  } @else if ($location == 'outside bottom') {
+    &::after {
+      @include ae-pseudo($wedge, $height);
+      bottom: -$height * 1px;
+    }
+  } @else {
+    @error "Invalid argument for $location - must use: `inside top`, `outside top`, `inside bottom`, `outside bottom`";
+  }
+
+  @if (map-has-key($points, $hypotenuse) == false) {
+    @error "Invalid argument for $hypotenuse - must use: `upper left`, `upper right`, `lower left`, `lower right`";
+  }
+}

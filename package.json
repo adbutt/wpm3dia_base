@@ -1,0 +1,37 @@
+{
+  "name": "wpm3dia_bas3",
+  "title": "Some Like it Neater",
+  "description": "skeleton build utilising SASS, Bourbon, Neat and Grunt based on 10ups EP",
+  "version": "0.0.1",
+  "homepage": "http://workpowermedia.com.au",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": {
+    "name": "Adam Butterworth",
+    "email": "adbutt@gmail.com",
+    "url": "http://workpowermedia.com.au"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.0.0",
+    "grunt": "^0.4.5",
+    "grunt-combine-mq": "^0.9.0",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-copy": "^0.8.0",
+    "grunt-contrib-cssmin": "^0.12.3",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-qunit": "^0.7.0",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-phpunit": "^0.3.6",
+    "grunt-postcss": "^0.6.0",
+    "grunt-sass": "^1.1.0",
+    "load-grunt-tasks": "^3.2.0",
+    "node-neat": "^1.7.2",
+    "qunitjs": "~1.18.0"
+  },
+  "keywords": []
+}

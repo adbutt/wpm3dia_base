@@ -1,0 +1,60 @@
+/**
+ * wpm3dia_bas3
+ * http://workpowermedia.com.au
+ *
+ * Copyright (c) 2016 Adam butterworth
+ * Licensed under the GPLv2+ license.
+ */
+
+ @import "bourbon";
+ @import "grid-settings"; //neat grid overides & breakpoints
+ @import "neat";
+
+ //Set variables, mixins and reusables
+@import "global/colors";
+@import "global/variables";
+@import "global/functions";
+@import "global/mixins";
+@import "global/placeholders";
+
+//HTML5 Reset
+
+@import "base/sanitize";
+@import "base/reset";
+
+//Import typical layout sass modules
+@import "base/icons";
+@import "base/typography";
+@import "base/wordpress";
+@import "base/helpers";
+
+//Import typical component modules
+@import "components/media";
+@import "components/forms";
+@import "components/tables";
+@import "components/lists";
+@import "components/buttons";
+@import "components/callouts";
+@import "components/toggles";
+@import "components/pagination";
+@import "components/post-navi";
+@import "components/widgets";
+
+//Import typical project layouts
+@import "layout/layout-base";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+
+//Import template specific styles
+@import "templates/homepage";
+@import "templates/single";
+@import "templates/blog";
+@import "templates/archives";
+@import "templates/content-area";
+@import "templates/comments";
+
+
+//Plugin / Vendor Styles
+@import "components/plugins";
+@import "components/modaal"; //Humaan Modal 

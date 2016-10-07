@@ -1,0 +1,123 @@
+/* Site Containers
+--------------------------------------------- */
+
+.site-content {
+  @extend %clearfix;
+  position: relative;
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  @include media($small-screen-up) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include media($smaller-screen-up) {
+    padding-top: $site-inner-padding;
+  }
+}
+
+.content-area {
+  
+}
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $base-wrap-max-width;
+  padding-left: 5%;
+  padding-right: 5%;
+
+  @include media($small-screen-up) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include media($medium-screen-up) {
+    max-width: $wrap-max-width-medium;
+  }
+
+  @include media($large-screen-up) {
+    max-width: $wrap-max-width-large;
+  }
+}
+.page-template-page-side-left {
+  .content-area {
+    @include media($small-screen-up) {
+    @include span-columns(8);
+    }
+  }
+  aside {
+    @include media($small-screen-up) {
+    @include span-columns(4);
+    @include omega;
+    }
+  }
+}
+
+.page-template-page-side-right {
+  .content-area {
+    @include media($small-screen-up) {
+    @include span-columns(8);
+    float:right;
+    @include omega;
+    }
+  }
+  aside {
+    @include media($small-screen-up) {
+    @include span-columns(4);
+    }
+  }
+}
+//Column Shortcode Styling
+.cols {
+  @include span-columns(4);
+}
+
+@for $num from 1 through 12 {
+  .cols-#{$num} {
+    @include span-columns($num);
+    @include omega(#{12/$num}n);
+  }
+}
+
+//BREAKOUT - The grid breaker to push content to full width
+.full-width-content {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
+//BREAKOUT - The grid breaker to push content to full width
+// The wrapper
+.breakout {
+  position:relative;
+  display:table;
+  width:100vw;
+  left:50%;
+}
+
+// The content
+// Generic
+.breakout > * {
+  position:relative; 
+  margin-left:auto; 
+  margin-right:auto;   
+  left:-50% ;
+}
+
+// Image
+.breakout img   { 
+  display:block;
+  width:100%;
+  max-width:960px;
+  min-width:320px;
+}
+
+.test-angle {
+  @include angled-edge('outside bottom', 'lower left', #bada55,$width: 2800, $height: 300);
+}

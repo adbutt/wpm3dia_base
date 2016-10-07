@@ -1,0 +1,158 @@
+/* Entries
+--------------------------------------------- */
+
+.hentry {
+  margin-bottom: $base-margin;
+  padding: 0;
+  position: relative;
+
+  @include media($small-screen-up) {
+    padding: $article-padding;
+  }
+}
+
+.content-area .hentry {
+  background-color: $entry-background-color;
+  border-bottom: 1px solid $entry-border-color;
+
+  @include media($small-screen-up) {
+    border: 1px solid $entry-border-color;
+  }
+}
+
+.entry-title {
+  font-weight: 600;
+
+  a {
+    color: $base-heading-color;
+  }
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+  color: $base-heading-color-hover;
+}
+
+.corner-ribbon {
+  @include size(85px);
+  background: transparent;
+  overflow: hidden;
+  position: absolute;
+  right: -1px;
+  top: -1px;
+
+  .ribbon-content {
+    transform: rotate(45deg);
+    background-color: $corner-ribbon-background-color;
+    color: $corner-ribbon-font-color;
+    font-size: $small-font-size;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+    padding: 2px 7px;
+    left: -5px;
+    text-align: center;
+    top: 15px;
+    width: 120px;
+  }
+}
+
+.rtl .ribbon-content {
+  transform: rotate(-45deg);
+}
+
+.entry-content {
+  @include entry-content();
+}
+
+/* Entry Meta
+--------------------------------------------- */
+
+.entry-meta {
+  color: $entry-meta-font-color;
+  font-size: $medium-font-size;
+  margin-bottom: 0;
+
+  span,
+  time,
+  a {
+    margin-right: 5px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    color: $entry-meta-link-color;
+
+    &:hover,
+    &:focus {
+      color: $entry-meta-link-color-hover;
+    }
+  }
+}
+
+.entry-terms {
+  display: block;
+  padding-bottom: 5px;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+
+  span,
+  time,
+  a {
+    margin-right: 0;
+  }
+}
+
+.entry-header .entry-meta {
+  margin-bottom: $content-margin-small;
+
+  @include media($small-screen-up) {
+    margin-bottom: $content-margin;
+  }
+}
+
+.entry-footer {
+
+  .entry-meta {
+    margin: 0;
+
+    &:last-of-type {
+      padding: 0 0 $content-margin;
+    }
+  }
+}
+
+/* Featured Media
+--------------------------------------------- */
+
+.featured-media {
+  background: $featured-media-background-color;
+  display: block;
+  margin: 0 0 $content-margin;
+  overflow: hidden;
+
+  @include media($small-screen-up) {
+    margin-left: -$base-padding;
+    margin-right: -$base-padding;
+    margin-top: -$base-padding;
+  }
+
+  &.audio {
+    padding: 20px;
+  }
+
+  > a {
+    display: block;
+    line-height: 0;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

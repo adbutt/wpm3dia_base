@@ -1,0 +1,13 @@
+.blog {
+  .content-area {
+    @include media($small-screen-up) {
+    @include span-columns(8);
+    }
+  }
+  aside {
+    @include media($small-screen-up) {
+    @include span-columns(4);
+    @include omega;
+    }
+  }
+}

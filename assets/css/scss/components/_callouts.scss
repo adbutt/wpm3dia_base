@@ -1,0 +1,8 @@
+.cta.button {
+  @extend %cta-button-style;
+}
+
+.entry-content .cta.button:hover,
+.entry-content .cta.button:focus {
+  color: $cta-button-font-color-hover;
+}

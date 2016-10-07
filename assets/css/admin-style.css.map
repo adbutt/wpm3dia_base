@@ -1,0 +1,10 @@
+{
+	"version": 3,
+	"file": "admin-style.css",
+	"sources": [
+		"scss/admin.scss",
+		"scss/admin/_admin.scss"
+	],
+	"mappings": "ACAA,oBAAoB,CAAC,GAAG,CAAC;EACvB,SAAS,EAAE,IAAK;EAChB,KAAK,EAAC,IAAK;EACX,MAAM,EAAC,IAAK,GACb",
+	"names": []
+}
