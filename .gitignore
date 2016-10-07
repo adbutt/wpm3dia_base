@@ -5,7 +5,8 @@ composer.lock
 phpunit.xml
 .idea
 # ignore all files that start with ~
-~*
+~
+.map
 
 # OS generated files #
 ######################
