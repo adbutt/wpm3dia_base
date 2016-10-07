@@ -178,5 +178,5 @@ img.alignnone,
 .site-container,
 .site-inner,
 .wrap {
-	@extend #clearfix;
+	@extend %clearfix;
 }
